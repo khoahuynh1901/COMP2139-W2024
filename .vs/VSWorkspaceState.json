@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\comp2139",
+    "\\comp2139\\bin",
+    "\\comp2139\\Controllers",
+    "\\comp2139\\Models",
+    "\\comp2139\\obj",
+    "\\comp2139\\Properties",
+    "\\comp2139\\Views",
+    "\\comp2139\\Views\\Shared"
+  ],
+  "SelectedNode": "\\.github",
+  "PreviewInSolutionExplorer": false
+}
