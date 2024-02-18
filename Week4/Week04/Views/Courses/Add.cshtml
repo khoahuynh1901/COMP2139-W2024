@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Week04.Models.AddCoursesViewModel //This way binding AddStudentViewModel class from Models folder.
+<h1>Add Courses</h1>
+
+<form method ="post">
+    <div class="mt-3">
+        <label for="NameStudent">Name</label>
+        <input type="text" class="form-control" id="NameStudent" asp-for="Name" />
+    </div>
+
+    <div class="mt-3">
+        <label for="StudentEmail">Email</label>
+        <input type="email" class="form-control" id="StudentEmail" asp-for="Code" />
+    </div>
+
+    <div class="mt-3">
+        <label for="StudentPhone">Phone Number</label>
+        <input type="text" class="form-control" id="StudentPhone" asp-for="Semester" />
+    </div>
+
+    <div class="mt-3">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="Subscribed" asp-for="Subscribe" />
+            <label class="form-check-label" for="Subscribed">Subscribed</label>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+
