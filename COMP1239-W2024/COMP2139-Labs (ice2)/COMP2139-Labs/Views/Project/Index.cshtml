@@ -1,0 +1,60 @@
+﻿@model List<Project>
+@{
+    ViewData["Title"] = "Projects";
+
+    bool searchPerformed = ViewData["SearchPerformed"] as bool? ?? false;
+    string searchString = ViewData["SearchString"] as string;
+}
+
+<h2>Projects</h2>
+
+<a asp-controller="Project" asp-action="Create" class="btn btn-primary">Create New Project</a>
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr> <!--table headers-->
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--iterates over the model and gets their data such as their ID, Name, and Description-->
+            @foreach (var project in Model)
+            {
+                <tr>
+                    <td>@project.ProjectId</td>
+                    <td>@project.Name</td>
+                    <td>@project.Description</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@project.ProjectId" class="btn btn-info">Details</a>
+                        <a asp-action="Delete" asp-route-id="@project.ProjectId" class="btn btn-danger">Delete</a>
+                        <a asp-controller="Tasks" asp-action="index" asp-route-projectId="@project.ProjectId" class="btn btn-warning">View Tasks</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>   
+}
+else 
+{
+    <p>There are no avaliable projects.</p> <!--if there are no projects then this will show up.--->
+
+    if (searchPerformed)
+    {
+        <p>No project have been found with the 
+            "@searchString".</p>
+    }
+    else
+    {   
+        <p>No projects avaliable.</p>
+    }
+}
+
+<p>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="Create">Create Project</a>
+</p>

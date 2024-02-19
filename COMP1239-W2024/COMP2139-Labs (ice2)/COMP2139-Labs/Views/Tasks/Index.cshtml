@@ -1,0 +1,60 @@
+﻿@model List<ProjectTask>
+
+@{
+    ViewData["Title"] = "Tasks";
+
+    bool searchPerformed = ViewData["SearchPerformed"] as bool? ?? false;
+    string searchString = ViewData["SearchString"] as string;
+}
+
+<h2>Tasks</h2>
+
+<a asp-controller="Tasks" asp-action="Create" class="btn btn-primary">Create New Task</a>
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <!--table headers-->
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--iterates over the model and gets their data such as their ID, Name, and Description-->
+            @foreach (var task in Model)
+            {
+                <tr>
+                    <td>@task.ProjectTaskId</td>
+                    <td>@task.Title</td>
+                    <td>@task.Description</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@task.ProjectTaskId" class="btn btn-info">Details</a>
+                        <a asp-action="Delete" asp-route-id="@task.ProjectTaskId" class="btn btn-danger">Delete</a>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+else
+{
+    <p>There are no avaliable tasks.</p> 
+    if (searchPerformed)
+    {
+        <p>No task have been found with the name "@searchString".</p>
+    }
+    else
+    {
+        <p>No tasks avaliable.</p>
+    }
+}
+
+<p>
+    <a class="nav-link text-dark" asp-area="" asp-action="" asp-controller="ProjectTask" asp-action="Create"></a>
+</p>
