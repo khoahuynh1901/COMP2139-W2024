@@ -1,0 +1,161 @@
+﻿@model GBC_Travel_Group53.Models.Domain.Person
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookings GBC</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .booking-form .form-group {
+            margin: 0;
+            padding: 0;
+        }
+
+            .booking-form form {
+                margin: 0;
+                padding: 15px; /* Adjust the padding as needed */
+            }
+    </style>
+
+
+</head>
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="booking-cta">
+                            <h1>Make your reservation</h1>
+                            <p>Travelling With GBC For Rewards</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="booking-form">
+                            <form asp-action="Bookings" asp-controller="Customers" method="post">
+                                <div class="form-group">
+                                    <label asp-for="Destination">Your Destination</label>
+                                    <input asp-for="Destination" class="form-control" placeholder="Enter a destination or hotel name">
+                                    <span asp-validation-for="Destination" class="text-danger"></span> <!-- Display validation errors -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="CheckIn" class="form-label">Check In</label>
+                                            <input asp-for="CheckIn" class="form-control" type="date" required>
+                                            <span asp-validation-for="CheckIn" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="CheckOut" class="form-label">Check out</label>
+                                            <input asp-for="CheckOut" class="form-control" type="date" required>
+                                            <span asp-validation-for="CheckOut" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="Rooms" class="form-label">Rooms</label>
+                                            <select asp-for="Rooms" class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                            <span asp-validation-for="Rooms" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="Adults" class="form-label">Adults</label>
+                                            <select asp-for="Adults" class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                            <span asp-validation-for="Adults" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="Children" class="form-label">Children</label>
+                                            <select asp-for="Children" class="form-control">
+                                                <option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                            </select>
+                                            <span asp-validation-for="Children" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Passport Number Section -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="PassportNumber" class="form-label">Passport Number</label>
+                                            <input asp-for="PassportNumber" class="form-control" placeholder="Enter your passport number">
+                                            <span asp-validation-for="PassportNumber" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Passport Number Section -->
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label asp-for="Name" class="form-label">Name</label>
+                                            <input asp-for="Name" class="form-control" placeholder="Enter your name">
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Phone" class="form-label">Phone</label>
+                                            <input asp-for="Phone" class="form-control" type="tel" placeholder="Enter your phone number">
+                                            <span asp-validation-for="Phone" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Email" class="form-label">Email</label>
+                                            <input asp-for="Email" class="form-control" type="email" placeholder="Enter your email address">
+                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if (TempData["msg"] != null)
+                                {
+                                    <div class="mb-3">
+                                        @TempData["msg"]
+                                    </div>
+                                }
+                                <div class="form-btn">
+                                    <button type="submit" class="btn btn-primary submit-btn" style="margin-top: 13px;">Check availability</button>
+                                    <a Href="/Customers/Summary" class="btn btn-primary" style="margin-top: 13px;">Summary</a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Khoah\\Documents\\School\\Year 2\\Winter-2023\\COMP2139 (ASPN.NET)\\Assginment 1\\GBC_Travel-Group53\\wwwroot\\background.jpg",
+      "PackagePath": "staticwebassets\\background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khoah\\Documents\\School\\Year 2\\Winter-2023\\COMP2139 (ASPN.NET)\\Assginment 1\\GBC_Travel-Group53\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Khoah\\Documents\\School\\Year 2\\Winter-2023\\COMP2139 (ASPN.NET)\\Assginment 1\\GBC_Travel-Group53\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Khoah\\Documents\\School\\Year 2\\Winter-2023\\COMP2139 (ASPN.NET)\\Assginment 1\\GBC_Travel-Group53\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GBC_Travel-Group53.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.GBC_Travel-Group53.props",
+      "PackagePath": "build\\GBC_Travel-Group53.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.GBC_Travel-Group53.props",
+      "PackagePath": "buildMultiTargeting\\GBC_Travel-Group53.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.GBC_Travel-Group53.props",
+      "PackagePath": "buildTransitive\\GBC_Travel-Group53.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
